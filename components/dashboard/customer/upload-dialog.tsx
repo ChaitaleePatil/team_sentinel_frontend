@@ -129,10 +129,9 @@ export function UploadDialog({ open, onOpenChange, selectedFiles, setSelectedFil
   );
 };
 
-
 const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
   if (e.target.files?.length) {
-    const filesArray: SelectedFile[] = Array.from(e.target.files).map((file) => ({
+    const newFiles: SelectedFile[] = Array.from(e.target.files).map((file) => ({
       id: uuidv4(),
       name: file.name,
       size: file.size,
@@ -140,17 +139,19 @@ const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
       preview: file.type.startsWith("image/") ? URL.createObjectURL(file) : null,
       file: file,
       settings: {
-        paperSize: "a4", // Default paper size
-        orientation: "portrait", // Default orientation
-        color: "bw", // Default print type
-        doubleSided: false, // Default double-sided setting
-        pages: "all", // Default pages
-        copies: 1, // Default copy count
+        paperSize: "a4",
+        orientation: "portrait",
+        color: "bw",
+        doubleSided: false,
+        pages: "all",
+        copies: 1,
       },
     }));
-    setSelectedFiles(filesArray);
+
+    setSelectedFiles((prevFiles) => [...prevFiles, ...newFiles]); // Append instead of replacing
   }
 };
+
 
 const handleShopSelect = (newValue: string) => {
   console.log("Selected Shop:", newValue); // Debugging

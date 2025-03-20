@@ -1,12 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Upload, Search, CreditCard, Printer, CheckCircle } from "lucide-react"
+import { Upload, Settings, ClipboardList, Printer, CheckCircle } from "lucide-react"
 
-export function CustomerFlowchart() {
+export function ShopkeeperFlowchart() {
   return (
     <div className="mt-8 p-6 bg-white rounded-xl shadow-md">
-      <h4 className="text-lg font-semibold mb-6 text-center">Customer Journey</h4>
+      <h4 className="text-lg font-semibold mb-6 text-center">Shopkeeper Journey</h4>
 
       <div className="space-y-12">
         {/* Step 1 */}
@@ -21,8 +21,8 @@ export function CustomerFlowchart() {
             <Upload className="h-6 w-6" />
           </div>
           <div className="bg-primary/5 p-4 rounded-lg flex-1">
-            <h5 className="font-medium">Upload Document</h5>
-            <p className="text-sm text-muted-foreground">Upload your document securely to our platform</p>
+            <h5 className="font-medium">Receive Order</h5>
+            <p className="text-sm text-muted-foreground">Get notified when customers submit their documents for printing</p>
           </div>
         </motion.div>
 
@@ -35,13 +35,11 @@ export function CustomerFlowchart() {
           transition={{ duration: 0.4, delay: 0.1 }}
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shrink-0 z-10">
-            <Search className="h-6 w-6" />
+            <Settings className="h-6 w-6" />
           </div>
           <div className="bg-primary/5 p-4 rounded-lg flex-1">
-            <h5 className="font-medium">Find Nearby Print Shops</h5>
-            <p className="text-sm text-muted-foreground">
-              Select from available print shops based on location and ratings
-            </p>
+            <h5 className="font-medium">Configure Print Settings</h5>
+            <p className="text-sm text-muted-foreground">Adjust print preferences based on customer requests</p>
           </div>
         </motion.div>
 
@@ -54,11 +52,11 @@ export function CustomerFlowchart() {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shrink-0 z-10">
-            <CreditCard className="h-6 w-6" />
+            <ClipboardList className="h-6 w-6" />
           </div>
           <div className="bg-primary/5 p-4 rounded-lg flex-1">
-            <h5 className="font-medium">Make Payment</h5>
-            <p className="text-sm text-muted-foreground">Pay securely for your printing service</p>
+            <h5 className="font-medium">Manage Orders</h5>
+            <p className="text-sm text-muted-foreground">Track, update, and manage customer orders efficiently</p>
           </div>
         </motion.div>
 
@@ -74,8 +72,8 @@ export function CustomerFlowchart() {
             <Printer className="h-6 w-6" />
           </div>
           <div className="bg-primary/5 p-4 rounded-lg flex-1">
-            <h5 className="font-medium">Document Printing</h5>
-            <p className="text-sm text-muted-foreground">Your document is printed at the selected shop</p>
+            <h5 className="font-medium">Print Documents</h5>
+            <p className="text-sm text-muted-foreground">Print the documents securely following the configured settings</p>
           </div>
         </motion.div>
       </div>
