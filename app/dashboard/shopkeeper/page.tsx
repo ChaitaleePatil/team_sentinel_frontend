@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
  
 import { ShopkeeperDashboardHeader } from "@/components/dashboard/shopkeeper/dashboard-header"
 import { ShopkeeperSidebar } from "@/components/dashboard/shopkeeper/sidebar"
-import { ShopkeeperStats } from "@/components/dashboard/shopkeeper/quick-stats"
 import { PrintQueue } from "@/components/dashboard/shopkeeper/print-queue"
 import { PrintDialog } from "@/components/dashboard/shopkeeper/print-dialog"
  
@@ -37,8 +36,6 @@ export default function ShopkeeperDashboard() {
 <h1 className="text-3xl font-bold">Shop Dashboard</h1>
 <p className="text-muted-foreground">Manage your print jobs and shop operations</p>
 </motion.div>
- 
-            <ShopkeeperStats />
 <PrintQueue onPrintClick={handlePrint} />
 </div>
 </main>
